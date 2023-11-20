@@ -7,6 +7,10 @@
 5. Run development server ```python3 manage.py runserver```
 6. Navigate to (localhost) /calculator
 
+#### Troubleshooting
+
+- Check Node is installed and "init" so the Tailwind CSS build process runs. 
+
 ### Deployment
 
 Production application is hosted on Fly.io, current url: 
