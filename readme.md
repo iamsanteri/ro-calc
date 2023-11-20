@@ -3,8 +3,9 @@
 1. Deactivate conda with command ```conda deactivate```
 2. Check Python version with ```python3 --version``` (current recommended 3.12)
 3. Navigate to project root directory and activate venv ```source ro-calc-env/bin/activate```
-4. Run development server ```python3 manage.py runserver```
-5. Navigate to (localhost) /calculator
+4. Run watcher for tailwind css ```npm run dev```
+5. Run development server ```python3 manage.py runserver```
+6. Navigate to (localhost) /calculator
 
 ### Deployment
 

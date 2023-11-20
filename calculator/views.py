@@ -4,4 +4,5 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request): 
-    return HttpResponse("Hello, Santeri. Welcome to your future RO calculator app.")
+    return render(request, 'index.html')
+    # return HttpResponse("test")
