@@ -7,6 +7,7 @@ from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 import joblib
 import numpy as np
 import sklearn
+from django.views.decorators.csrf import csrf_exempt
 
 # Load the model and the encoders
 model = joblib.load('jupyter/model.pkl')
@@ -19,6 +20,7 @@ def process_user_input(user_input):
     data_encoded = encoder.transform(data)
     return data_encoded
 
+@csrf_exempt
 def index(request): 
     if request.method == 'POST':
         form = PredictionForm(request.POST)
@@ -38,11 +40,3 @@ def index(request):
     else:
         form = PredictionForm()
         return render(request, 'index.html', {'form': form})
-
-
-# Step 9: Create an API endpoint
-class PredictView(View):
-    def post(self, request):
-        data = request.POST
-        prediction = model.predict([data])
-        return JsonResponse({'prediction': prediction.tolist()})
