@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'calculator'
 ]
 
+CSRF_TRUSTED_ORIGINS = ['ro-calc.fly.dev']
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
