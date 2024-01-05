@@ -2,10 +2,11 @@
 
 1. Deactivate conda with command ```conda deactivate```
 2. Check Python version with ```python3 --version``` (current recommended 3.12)
-3. Navigate to project root directory and activate venv ```source ro-calc-env/bin/activate```
-4. Run watcher for Tailwind CSS ```npm run dev```
-5. Run development server ```python3 manage.py runserver```
-6. Navigate to (localhost) /calculator
+3. Make sure to choose Conda based Python interpreter selected to resolve imports in VSCode
+4. Navigate to project root directory and activate venv ```source ro-calc-env/bin/activate```
+5. Run watcher for Tailwind CSS ```npm run dev```
+6. Run development server ```python3 manage.py runserver```
+7. Navigate to (localhost) /calculator
 
 #### Troubleshooting
 
@@ -13,7 +14,7 @@
 
 ### Deployment
 
-Production application is hosted on Fly.io, current url: 
+Production application is hosted on Fly.io, past url has been: 
 https://ro-calc.fly.dev
 
 1. Ensure venv is activated ("ro-calc" in command line)
