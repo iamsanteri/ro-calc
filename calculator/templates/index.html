@@ -6,7 +6,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<link rel="stylesheet" href="{% static 'src/styles.css' %}">
+		<link rel="stylesheet" href="{% static 'staticfiles/src/styles.css' %}">
 	</head>
 
 	<body>
@@ -17,6 +17,36 @@
 					<p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Welcome to your future RO-calculator!</p>
 				</div>
 			</div>
+		</section>
+		<section class="bg-white dark:bg-gray-900">
+			<div class="flex justify-center">
+				<form method="post" class="shadow-md rounded px-8 pt-6 pb-8 mb-4">
+					{% csrf_token %}
+					<div class="mb-4">
+						<label class="block text-gray-300 text-sm font-bold mb-2" for="num1">
+							Number 1:
+						</label>
+						<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="num1" type="number" name="num1">
+					</div>
+					<div class="mb-6">
+						<label class="block text-gray-300 text-sm font-bold mb-2" for="num2">
+							Number 2:
+						</label>
+						<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="num2" type="number" name="num2">
+					</div>
+					<div class="flex items-center justify-between">
+						<input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Calculate">
+					</div>
+					{% if sum %}
+    					<span class="bg-blue-200 text-blue-950 px-2 py-1 m-10 rounded text-center block">{{ sum }}</span>
+					{% endif %}
+					{% if error %}
+						<div class="bg-red-500 text-white px-4 py-2 m-10 rounded">
+							{{ error }}
+						</div>
+					{% endif %}
+				</form>
+			<div>
 		</section>
 	</body>
 </html>
